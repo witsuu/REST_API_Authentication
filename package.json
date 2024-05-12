@@ -1,12 +1,15 @@
 {
-  "name": "REST-API-Authentication",
+  "name": "REST API Authentication",
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/cors": "^1.0.2",
+    "@elysiajs/swagger": "^1.0.5",
+    "elysia": "latest",
+    "mongoose": "^8.3.4"
   },
   "devDependencies": {
     "bun-types": "latest"
