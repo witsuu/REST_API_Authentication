@@ -1,7 +1,9 @@
 {
-	"functions": {
-		"src/index.ts": {
-			"memory": 1024
+	"version": 2,
+	"rewrites": [
+		{
+			"source": "/(.*)",
+			"destination": "/build/api"
 		}
-	}
+	]
 }
