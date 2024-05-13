@@ -1,5 +1,5 @@
 import { NotFoundError } from "elysia";
-import Users from "../models/user"
+import Users from "../models/Users"
 import { BadRequestError } from "../exceptions/BadRequestError";
 
 export const authenticate = {
@@ -15,7 +15,7 @@ export const authenticate = {
         const verifyPass = await Bun.password.verify(password, hashPassword);
 
         if (!verifyPass)
-            throw new NotFoundError("Incorrect Password")
+            throw new NotFoundError("Password don't match")
     },
     verifyEmailExists: async (email: string) => {
         const user = await Users.findOne({ email });

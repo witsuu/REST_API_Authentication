@@ -1,15 +1,23 @@
 import { Context } from "elysia";
-import Users, { IUser } from "../models/user";
+import Users, { IUser } from "../models/Users";
 import { authenticate } from '../services/authenticate'
 import { BadRequestError } from "../exceptions/BadRequestError";
 
 export const AuthController = {
-    login: async ({ body }: Context) => {
+    login: async ({ body, jwt, cookie: { __SECRET_ATC } }: Context) => {
         const { email, password } = body as IUser;
 
         const user = await authenticate.verifyEmail(email);
 
         await authenticate.verifyPass(password, user.password);
+
+        const access_token = await jwt.sign(user.id);
+
+        __SECRET_ATC.set({
+            value: access_token,
+            httpOnly: true,
+            expires: new Date(Date.now() + 1 * 3600000)
+        })
 
         return {
             message: "user has successfully logged in"
