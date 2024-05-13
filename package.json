@@ -4,8 +4,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "bun run --watch src/index.ts",
-		"build": "bun build ./src/index.ts --outdir ./build/api --target bun",
-		"start": "NODE_ENV=production bun build/api/index.js"
+		"build": "bun build ./src/index.ts --outdir ./api --target bun",
+		"start": "NODE_ENV=production bun api/index.js"
 	},
 	"dependencies": {
 		"@elysiajs/bearer": "^1.0.2",
