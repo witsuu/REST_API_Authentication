@@ -1,14 +1,15 @@
 {
 	"version": 2,
-	"rewrites": [
+	"builds": [
 		{
-			"source": "/(.*)",
-			"destination": "./src"
+			"src": "src/index.ts",
+			"use": "vercel-deno@3.1.0"
 		}
 	],
-	"functions": {
-		"src/index.ts": {
-			"runtime": "vercel-deno@3.1.0"
+	"routes": [
+		{
+			"src": "/(.*)",
+			"dest": "/src/index.ts"
 		}
-	}
+	]
 }
