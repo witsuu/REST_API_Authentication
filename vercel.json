@@ -3,7 +3,7 @@
 	"rewrites": [
 		{
 			"source": "/(.*)",
-			"destination": "/build/api"
+			"destination": "/api"
 		}
 	],
 	"functions": {
