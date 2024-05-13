@@ -1,13 +1,7 @@
 {
-	"version": 2,
-	"builds": {
-		"src": "./src/index.ts",
-		"use": "bun-vercel"
-	},
-	"rewrites": [
-		{
-			"source": "/(.*)",
-			"destination": "/build"
+	"function": {
+		"src/index.ts": {
+			"memory": 1024
 		}
-	]
+	}
 }
