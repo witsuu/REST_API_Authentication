@@ -3,12 +3,12 @@
 	"rewrites": [
 		{
 			"source": "/(.*)",
-			"destination": "/api"
+			"destination": "./src"
 		}
 	],
 	"functions": {
-		"api/index.js": {
-			"memory": 1024
+		"src/index.ts": {
+			"runtime": "vercel-deno@3.1.0"
 		}
 	}
 }
